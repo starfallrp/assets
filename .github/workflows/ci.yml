@@ -9,6 +9,9 @@ on:
       - main
   workflow_dispatch: # Permite execução manual
 
+permissions:
+  contents: write
+  packages: write
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -36,5 +39,3 @@ jobs:
         git add .
         git commit -m 'Update index.html'
         git push
-      env:
-        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
